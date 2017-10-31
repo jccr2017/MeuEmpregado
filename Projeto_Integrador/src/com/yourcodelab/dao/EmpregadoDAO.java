@@ -24,8 +24,8 @@ private String LISTAR_TODOS = "select tb_empregado.*, tb_status.description from
 
 private String PROCURAR_NOME = "SELECT cs.id, cs.nome, cs.data_nascimento,cs.cpf,cs.rg"
 		+ ",cs.telefone_fixo,cs.telefone_celular,cs.cep,cs.endereco_rua,cs.endereco_numero,cs.complemento"
-		+ ",cs.bairro,cs.cidade,cs.estado,cs.email,cs.senha,cs.sexo,ct.id,ct.description FROM tb_empregado cs"
-		+ ",tb_status ct WHERE cs.nome LIKE ? AND cs.idstatus= ct.id";
+		+ ",cs.bairro,cs.cidade,cs.estado,cs.email,cs.senha,cs.sexo,cs.descricao,ct.id,ct.description FROM tb_empregado cs"
+		+ ",tb_status ct WHERE cs.cidade LIKE ? AND cs.idstatus= ct.id";
 
 
 public List<Empregado> listAll() throws SQLException, ClassNotFoundException, IOException{
@@ -46,7 +46,7 @@ public List<Empregado> listAll() throws SQLException, ClassNotFoundException, IO
 					rs.getString("cpf"),rs.getString("rg"),rs.getString("telefone_fixo"),rs.getString("telefone_celular"),
 					rs.getString("cep"),rs.getString("endereco_rua"),rs.getString("endereco_numero"),
 					rs.getString("complemento"),rs.getString("bairro"),rs.getString("cidade"),rs.getString("estado"),
-					rs.getString("email"),rs.getString("senha"),status,rs.getString("sexo"));
+					rs.getString("email"),rs.getString("senha"),status,rs.getString("sexo"),rs.getString("descricao"));
 			
 				lista.add(c);
 		}
@@ -60,7 +60,7 @@ public List<Empregado> listAll() throws SQLException, ClassNotFoundException, IO
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 
-public List<Empregado> findEmpregadoByName(String nome) throws ClassNotFoundException, SQLException, IOException{
+public List<Empregado> findEmpregadoByCidade(String cidade) throws ClassNotFoundException, SQLException, IOException{
 	
 	openConnection();
 	
@@ -68,7 +68,10 @@ public List<Empregado> findEmpregadoByName(String nome) throws ClassNotFoundExce
 	
 	ps=connect.prepareStatement(PROCURAR_NOME);
 	
-    ps.setString(1,"%"+nome+"%");
+    ps.setString(1,"%"+cidade+"%");
+    
+    
+    
 	//ps.setString(0, name);
 	
 	ResultSet rs = ps.executeQuery();
@@ -96,6 +99,7 @@ public List<Empregado> findEmpregadoByName(String nome) throws ClassNotFoundExce
 		c.setNome(rs.getString("cs.nome"));
 		c.setStatus(new Status(rs.getInt("ct.id"), rs.getString("ct.description")));
 		c.setSexo(rs.getString("cs.sexo"));
+		c.setDescricao(rs.getString("cs.descricao"));
 
 		lista.add(c);
 		

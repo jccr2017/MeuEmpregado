@@ -21,11 +21,11 @@ public class EmpregadoService {
 		return list;
 	}
 	
-	public List<Empregado> findEmpregadoByName(String nome) throws SQLException, ClassNotFoundException, IOException{
+	public List<Empregado> findEmpregadoByCidade(String cidade) throws SQLException, ClassNotFoundException, IOException{
 		List<Empregado> list = new ArrayList<Empregado>();
 		
-		if(!nome.isEmpty()) {
-			list = dao.findEmpregadoByName(nome);
+		if(!cidade.isEmpty()) {
+			list = dao.findEmpregadoByCidade(cidade);
 		}
 		else {
 			list = dao.listAll();

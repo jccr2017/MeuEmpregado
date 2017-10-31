@@ -31,17 +31,21 @@
 			
 		<!-- Conteúdo principal da página -->
 		<main class="container">
-		<h1>List of Customers</h1>
+		<h1>Lista de Pessoas</h1>
 		<hr/>
 		<f:view>
 			<h:form styleClass="form-inline">
 			<div id="actions" class="search">
 				<div class="col-md-12">
-					<h:outputLabel for="searchName" value="Name:"/>
+					<h:outputLabel for="searchName" value="Cidade:"/>
 					
-					 <h:inputText id="searchName" styleClass="form-control mb-4 mr-sm-4 mb-sm-0" value="#{empregadoManagedBean.empregado.nome}"/> 
+					 <h:inputText id="searchName" styleClass="form-control mb-4 mr-sm-4 mb-sm-0" value="#{empregadoManagedBean.empregado.cidade}"/> 
 					
-					<h:commandButton styleClass="btn btn-primary" value="Search" action="#{empregadoManagedBean.searchByNameAction}"/>
+
+					
+					<h:commandButton styleClass="btn btn-primary" value="Pesquisar" action="#{empregadoManagedBean.searchByCidadeAction}"/>
+				
+				<h:commandButton styleClass="btn btn-primary" value="Listar Tudo" action="#{empregadoManagedBean.ListarTudo}"/>
 				
 				</div>
 			</div>
@@ -60,7 +64,7 @@
 					</h:column>    
 					<h:column>
 						<f:facet name="header">
-							<h:outputLabel value="Name"/>
+							<h:outputLabel value="Nome"/>
 						</f:facet>
 				    	<h:outputText value="#{c.nome}"/>
 					</h:column>    
@@ -70,6 +74,24 @@
 						</f:facet>
 				    	<h:outputText value="#{c.email}"/>
 					</h:column>
+					
+							<h:column>
+						<f:facet name="header">
+							<h:outputLabel value="Cidade"/>
+						</f:facet>
+				    	<h:outputText value="#{c.cidade}"/>
+					</h:column>
+					
+					
+								<h:column>
+						<f:facet name="header">
+							<h:outputLabel value="Descricao"/>
+						</f:facet>
+				    	<h:outputText value="#{c.descricao}"/>
+					</h:column>
+					
+					
+					
 					<!-- 
 					
 							<h:column>

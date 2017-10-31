@@ -20,6 +20,8 @@ public class Empregado {
 	private String senha;
 	private String sexo;
 	private Status status;
+	private String descricao;
+	
 	
 	public Empregado(){
 		
@@ -28,7 +30,7 @@ public class Empregado {
 	
 	public Empregado(Integer id, String nome, String data_nascimento, String cpf, String rg, String telefone_fixo,
 			String telefone_celular, String cep, String endereco_rua, String endereco_numero, String complemento,
-			String bairro, String cidade, String estado, String email, String senha, Status status, String sexo) {
+			String bairro, String cidade, String estado, String email, String senha, Status status, String sexo,String descricao) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -48,9 +50,21 @@ public class Empregado {
 		this.senha = senha;
 		this.status = status;
 		this.sexo = sexo;
+		this.descricao=descricao;
 	}
 	
 	
+	
+	public String getDescricao() {
+		return descricao;
+	}
+
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+
 	public Integer getId() {
 		return id;
 	}

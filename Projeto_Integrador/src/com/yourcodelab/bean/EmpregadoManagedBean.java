@@ -34,7 +34,7 @@ public class EmpregadoManagedBean {
 	public EmpregadoManagedBean() throws ClassNotFoundException, SQLException, IOException{
 		
 		serviceempregado = new EmpregadoService();
-		empregado = new Empregado(0, "", "","", "","", "","", "","", "","", "","", "","",status,"");
+		empregado = new Empregado(0, "", "","", "","", "","", "","", "","", "","", "","",status,"","");
 		
 		listEmpregado = serviceempregado.listAll();
 		
@@ -42,9 +42,16 @@ public class EmpregadoManagedBean {
 	
 	
 	
-	public String searchByNameAction() throws SQLException, ClassNotFoundException, IOException{
+	public String searchByCidadeAction() throws SQLException, ClassNotFoundException, IOException{
 		System.out.println("Searching...");
-		this.listEmpregado = serviceempregado.findEmpregadoByName(empregado.getNome());
+		this.listEmpregado = serviceempregado.findEmpregadoByCidade(empregado.getCidade());
+		
+		return "index";
+	}
+	
+	public String ListarTudo() throws SQLException, ClassNotFoundException, IOException{
+		System.out.println("Searching...");
+		this.listEmpregado = serviceempregado.listAll();
 		
 		return "index";
 	}
