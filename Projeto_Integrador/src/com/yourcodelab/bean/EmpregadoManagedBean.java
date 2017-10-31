@@ -39,6 +39,24 @@ public class EmpregadoManagedBean {
 		listEmpregado = serviceempregado.listAll();
 		
 	}
+	
+	
+	
+	public String searchByNameAction() throws SQLException, ClassNotFoundException, IOException{
+		System.out.println("Searching...");
+		this.listEmpregado = serviceempregado.findEmpregadoByName(empregado.getNome());
+		
+		return "index";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//////////////////////////////////////////
 	
 	/*

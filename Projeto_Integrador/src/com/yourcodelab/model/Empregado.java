@@ -18,17 +18,13 @@ public class Empregado {
 	private String estado;
 	private String email;
 	private String senha;
-	private Status status;
 	private String sexo;
+	private Status status;
 	
-	
-	
-	
-	
-	
-	
-	
-	
+	public Empregado(){
+		
+	}
+
 	
 	public Empregado(Integer id, String nome, String data_nascimento, String cpf, String rg, String telefone_fixo,
 			String telefone_celular, String cep, String endereco_rua, String endereco_numero, String complemento,
@@ -53,6 +49,8 @@ public class Empregado {
 		this.status = status;
 		this.sexo = sexo;
 	}
+	
+	
 	public Integer getId() {
 		return id;
 	}
