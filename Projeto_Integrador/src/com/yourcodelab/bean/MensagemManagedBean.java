@@ -28,6 +28,9 @@ public class MensagemManagedBean {
 	
 	
 	public MensagemManagedBean() throws SQLException, ClassNotFoundException, IOException{
+		
+		
+		
 		service = new MensagemService();
 		
 		resposta = new Resposta(0, "");
@@ -57,6 +60,7 @@ public class MensagemManagedBean {
 	public String deleteMensagemAction() throws SQLException, ClassNotFoundException, IOException {
 		System.out.println("Deleting...");
 		service.deleteMensagem(Mensagem);
+		
 		listMensagem = service.listAll();
 		
 		return "indexEMPREGADOR";
@@ -75,20 +79,14 @@ public class MensagemManagedBean {
 		
 		this.listMensagem = service.listAll();
 		
+		
+		
 		return "listamensagemEMPREGADO";
 		
+	
+		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	////////////////////////////////////////
 	public Mensagem getMensagem() {
 		return Mensagem;

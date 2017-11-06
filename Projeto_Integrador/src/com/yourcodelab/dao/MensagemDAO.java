@@ -19,11 +19,11 @@ public class MensagemDAO extends GenericDAO{
 	PreparedStatement ps;
 	
 	private String INSERT_MENSAGEM = "INSERT INTO tb_mensagem(nomeempresa,email,msg,idresposta,endereco,vaga,horaentrevista,data) VALUES(?, ?, ?,?,?,?,?,?);";
-	private String LISTAR_MENSAGEM = "select tb_mensagem.*, tb_resposta.description from tb_mensagem inner join tb_resposta on tb_mensagem.idresposta = tb_resposta.id;";
+	private String LISTAR_MENSAGEM = "select tb_mensagem.*, tb_resposta.id as idResposta, tb_resposta.description from tb_mensagem inner join tb_resposta on tb_mensagem.idresposta = tb_resposta.id;";
 	private String EXCLUIR = "DELETE FROM  tb_mensagem WHERE ID=?;";
 	private String ALTERAR = "UPDATE tb_mensagem SET nomeempresa= ?, email= ?, msg = ?,idresposta=?,endereco=?,vaga=?,horaentrevista=?,data=? WHERE id=?;";
 	
-	private String TESTE = "UPDATE tb_mensagem SET nomeempresa= ?, email= ?, msg = ?,idresposta=?,endereco=?,vaga=?,horaentrevista=?,data=? WHERE id=?;";
+	
 	
 	public void salvar(Mensagem c) throws SQLException, ClassNotFoundException, IOException {
 		openConnection();
@@ -60,7 +60,7 @@ public class MensagemDAO extends GenericDAO{
 		if(rs != null) {
 			while(rs.next()) {
 				
-				Resposta resposta= new Resposta(rs.getInt("id"), rs.getString("description"));
+				Resposta resposta= new Resposta(rs.getInt("idResposta"), rs.getString("description"));
 				
 				Mensagem c = new Mensagem(rs.getInt("id"),rs.getString("nomeempresa"), rs.getString("email"), rs.getString("msg")
 						,resposta,rs.getString("endereco"),rs.getString("vaga"),rs.getString("horaentrevista"),rs.getString("data"));
@@ -91,15 +91,17 @@ public class MensagemDAO extends GenericDAO{
 		openConnection();
 		
 		ps = connect.prepareStatement(ALTERAR);
-		ps.setInt(1, c.getId());
-		ps.setString(2, c.getNomeempresa());
-		ps.setString(3, c.getEmail());
-		ps.setString(4,c.getMsg());
-		ps.setInt(5, c.getResposta().getId());
-		ps.setString(6,c.getEndereco());
-		ps.setString(7,c.getVaga());
-		ps.setString(8,c.getHoraentrevista());
-		ps.setString(9,c.getData());
+		
+		ps.setString(1, c.getNomeempresa());
+		ps.setString(2, c.getEmail());
+		ps.setString(3,c.getMsg());
+		ps.setInt(4, c.getResposta().getId());
+		ps.setString(5,c.getEndereco());
+		ps.setString(6,c.getVaga());
+		ps.setString(7,c.getHoraentrevista());
+		ps.setString(8,c.getData());
+		ps.setInt(9, c.getId());
+		
 		
 		ps.execute();
 		

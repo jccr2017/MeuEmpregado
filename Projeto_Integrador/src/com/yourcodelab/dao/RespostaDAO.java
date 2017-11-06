@@ -17,7 +17,11 @@ public class RespostaDAO extends GenericDAO{
 	public List<Resposta> listAll () throws SQLException, ClassNotFoundException, IOException {
 		openConnection();
 		
+		
+		
+		
 		ps = connect.prepareStatement(LISTAR);
+		
 		
 		ResultSet rs = ps.executeQuery();
 		List<Resposta> list = new ArrayList<Resposta>();
