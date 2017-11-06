@@ -23,6 +23,8 @@ public class MensagemDAO extends GenericDAO{
 	private String EXCLUIR = "DELETE FROM  tb_mensagem WHERE ID=?;";
 	private String ALTERAR = "UPDATE tb_mensagem SET nomeempresa= ?, email= ?, msg = ?,idresposta=?,endereco=?,vaga=?,horaentrevista=?,data=? WHERE id=?;";
 	
+	private String TESTE = "UPDATE tb_mensagem SET nomeempresa= ?, email= ?, msg = ?,idresposta=?,endereco=?,vaga=?,horaentrevista=?,data=? WHERE id=?;";
+	
 	public void salvar(Mensagem c) throws SQLException, ClassNotFoundException, IOException {
 		openConnection();
 		
