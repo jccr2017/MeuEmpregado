@@ -31,21 +31,18 @@
 			
 		<!-- Conteúdo principal da página -->
 		<main class="container">
-		<h1>Lista de Pessoas</h1>
+		
+		<div align="center">
+<h1>Lista de Mensagens</h1>
+</div>
+		
 		<hr/>
 		<f:view>
 			<h:form styleClass="form-inline">
 			<div id="actions" class="search">
-				<div class="col-md-12">
-					<h:outputLabel for="searchName" value="Cidade:"/>
-					
-					 <h:inputText id="searchName" styleClass="form-control mb-4 mr-sm-4 mb-sm-0" value="#{empregadoManagedBean.empregado.cidade}"/> 
+				<div class="col-md-12"> 
 					
 
-					
-					<h:commandButton styleClass="btn btn-primary" value="Pesquisar" action="#{empregadoManagedBean.searchByCidadeAction}"/>
-				
-				<h:commandButton styleClass="btn btn-primary" value="Listar Tudo" action="#{empregadoManagedBean.ListarTudo}"/>
 				
 				</div>
 			</div>
@@ -55,41 +52,38 @@
 			
 			
 			<h:form>
-				<h:dataTable styleClass="table table-striped" var="c" value="#{empregadoManagedBean.listEmpregado}">
-					<h:column>
-						<f:facet name="header">
-							<h:outputLabel value="Id"/>
-						</f:facet>
-						<h:outputText value="#{c.id}"/>		    	
-					</h:column>    
-					<h:column>
-						<f:facet name="header">
-							<h:outputLabel value="Nome"/>
-						</f:facet>
-				    	<h:outputText value="#{c.nome}"/>
-					</h:column>    
+				<h:dataTable styleClass="table table-striped" var="c" value="#{mensagemManagedBean.listMensagem}">
+ 
+ 
+              		 
 					<h:column>
 						<f:facet name="header">
 							<h:outputLabel value="Email"/>
 						</f:facet>
 				    	<h:outputText value="#{c.email}"/>
 					</h:column>
+ 
+					<h:column>
+						<f:facet name="header">
+							<h:outputLabel value="Nome da Empresa"/>
+						</f:facet>
+				    	<h:outputText value="#{c.nomeempresa}"/>
+					</h:column>   
 					
 							<h:column>
 						<f:facet name="header">
-							<h:outputLabel value="Cidade"/>
+							<h:outputLabel value="Vaga"/>
 						</f:facet>
-				    	<h:outputText value="#{c.cidade}"/>
+				    	<h:outputText value="#{c.vaga}"/>
 					</h:column>
 					
 					
 								<h:column>
 						<f:facet name="header">
-							<h:outputLabel value="Descricao"/>
+							<h:outputLabel value="Hora Entrevista"/>
 						</f:facet>
-				    	<h:outputText value="#{c.descricao}"/>
+				    	<h:outputText value="#{c.horaentrevista}"/>
 					</h:column>
-					
 					
 					
 					<!-- 
@@ -105,8 +99,8 @@
 					
 			
 					<h:column>
-						<h:commandLink styleClass="btn btn-sm btn-success" value="Visualizar Perfil" action="showCustomer?faces-redirect=true">
-							<f:setPropertyActionListener target="#{empregadoManagedBean.empregado}" value="#{c}" />
+						<h:commandLink styleClass="btn btn-sm btn-success" value="Visualizar Perfil" action="showMsgEMPREGADO?faces-redirect=true">
+							<f:setPropertyActionListener target="#{mensagemManagedBean.mensagem}" value="#{c}" />
 						</h:commandLink>
 
 					</h:column>       

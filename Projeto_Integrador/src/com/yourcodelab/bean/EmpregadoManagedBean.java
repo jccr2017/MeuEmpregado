@@ -46,24 +46,18 @@ public class EmpregadoManagedBean {
 		System.out.println("Searching...");
 		this.listEmpregado = serviceempregado.findEmpregadoByCidade(empregado.getCidade());
 		
-		return "index";
+		return "indexEMPREGADOR";
 	}
 	
 	public String ListarTudo() throws SQLException, ClassNotFoundException, IOException{
-		System.out.println("Searching...");
+		
 		this.listEmpregado = serviceempregado.listAll();
 		
-		return "index";
+		return "indexEMPREGADOR";
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
+
 	//////////////////////////////////////////
 	
 	/*

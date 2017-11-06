@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15089687379590" configfile="/Projeto_Integrador/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf15089687579231" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf15089687579232 pf15089687579233" inlinks="pf15089687579234 pf15089687579235" path="index.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="showCustomer.xhtml" id="pf15089687579236" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf15089687579234" inlinks="pf15089687579232" path="showCustomer.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="newCustomer.xhtml" id="pf15089687579237" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf15089687579235" inlinks="pf15089687579233" path="newCustomer.xhtml"/>
-  <links id="pf15089687579232" target="pf15089687579236" source="pf15089687579231" outcome="showCustomer" redirect="true"/>
-  <links id="pf15089687579233" target="pf15089687579237" source="pf15089687579231" outcome="newCustomer" redirect="true"/>
-  <links id="pf15089687579234" target="pf15089687579231" source="pf15089687579236" outcome="index" redirect="true"/>
-  <links id="pf15089687579235" target="pf15089687579231" source="pf15089687579237" outcome="index" redirect="true"/>
+  <nodes xsi:type="pageflow:PFPage" name="showEMPREGADO.xhtml" id="pf15095758581245" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf15096392004050" inlinks="pf15096392004051" path="showEMPREGADO.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="novaMensagemEMPREGADO.xhtml" id="pf15095758581246" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf15096392004052" inlinks="pf15096392004053" path="novaMensagemEMPREGADO.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="indexEMPREGADOR.xhtml" id="pf15096392004054" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf15096392004051 pf15096392004053" inlinks="pf15096392004050 pf15096392004052" path="indexEMPREGADOR.xhtml"/>
+  <links id="pf15096392004051" target="pf15095758581245" source="pf15096392004054" outcome="showEMPREGADO" redirect="true"/>
+  <links id="pf15096392004053" target="pf15095758581246" source="pf15096392004054" outcome="novaMensagemEMPREGADO" redirect="true"/>
+  <links id="pf15096392004050" target="pf15096392004054" source="pf15095758581245" outcome="indexEMPREGADOR" redirect="true"/>
+  <links id="pf15096392004052" target="pf15096392004054" source="pf15095758581246" outcome="indexEMPREGADOR" redirect="true"/>
 </pageflow:Pageflow>

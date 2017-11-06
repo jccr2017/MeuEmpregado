@@ -9,41 +9,51 @@
 
 
 	<navigation-rule>
-		<from-view-id>index.xhtml</from-view-id>
+		<from-view-id>indexEMPREGADOR.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>showCustomer</from-outcome>
-			<to-view-id>showCustomer.xhtml</to-view-id>
+			<from-outcome>showEMPREGADO</from-outcome>
+			<to-view-id>showEMPREGADO.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 	
 	<navigation-rule>
-		<from-view-id>index.xhtml</from-view-id>
+		<from-view-id>indexEMPREGADOR.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>newCustomer</from-outcome>
-			<to-view-id>newCustomer.xhtml</to-view-id>
+			<from-outcome>novaMensagemEMPREGADO</from-outcome>
+			<to-view-id>novaMensagemEMPREGADO.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 	
 	<navigation-rule>
-		<from-view-id>showCustomer.xhtml</from-view-id>
+		<from-view-id>showEMPREGADO.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>index</from-outcome>
-			<to-view-id>index.xhtml</to-view-id>
+			<from-outcome>indexEMPREGADOR</from-outcome>
+			<to-view-id>indexEMPREGADOR.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 	
 	<navigation-rule>
-		<from-view-id>newCustomer.xhtml</from-view-id>
+		<from-view-id>novaMensagemEMPREGADO.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>index</from-outcome>
-			<to-view-id>index.xhtml</to-view-id>
+			<from-outcome>indexEMPREGADOR</from-outcome>
+			<to-view-id>indexEMPREGADOR.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 
+
+
+	<navigation-rule>
+		<from-view-id>showMsgEMPREGADO</from-view-id>
+		<navigation-case>
+			<from-outcome>listamensagemEMPREGADO</from-outcome>
+			<to-view-id>listamensagemEMPREGADO.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
 
 
 
