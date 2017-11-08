@@ -4,6 +4,7 @@ import java.io.IOException;
 
 
 
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,17 +12,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.yourcodelab.model.Mensagem;
-import com.yourcodelab.model.Resposta;
+
 
 
 public class MensagemDAO extends GenericDAO{
 	
 	PreparedStatement ps;
 	
-	private String INSERT_MENSAGEM = "INSERT INTO tb_mensagem(nomeempresa,email,msg,idresposta,endereco,vaga,horaentrevista,data) VALUES(?, ?, ?,?,?,?,?,?);";
-	private String LISTAR_MENSAGEM = "select tb_mensagem.*, tb_resposta.id as idResposta, tb_resposta.description from tb_mensagem inner join tb_resposta on tb_mensagem.idresposta = tb_resposta.id;";
+	private String INSERT_MENSAGEM = "INSERT INTO tb_mensagem(nomeempresa,email,msg,idresposta,endereco,vaga,horaentrevista,data,salario,beneficios) VALUES(?, ?, ?,?,?,?,?,?,?,?);";
+	private String LISTAR_MENSAGEM = "SELECT * FROM tb_mensagem;";
 	private String EXCLUIR = "DELETE FROM  tb_mensagem WHERE ID=?;";
-	private String ALTERAR = "UPDATE tb_mensagem SET nomeempresa= ?, email= ?, msg = ?,idresposta=?,endereco=?,vaga=?,horaentrevista=?,data=? WHERE id=?;";
+	private String ALTERAR = "UPDATE tb_mensagem SET nomeempresa= ?, email= ?, msg = ?,idresposta=?,endereco=?,vaga=?,horaentrevista=?,data=?,salario=?,beneficios=? WHERE id=?;";
 	
 	
 	
@@ -33,11 +34,13 @@ public class MensagemDAO extends GenericDAO{
 		ps.setString(1, c.getNomeempresa());
 		ps.setString(2, c.getEmail());
 		ps.setString(3,c.getMsg());
-		ps.setInt(4, c.getResposta().getId());
+		ps.setString(4, c.getResposta());
 		ps.setString(5,c.getEndereco());
 		ps.setString(6,c.getVaga());
 		ps.setString(7,c.getHoraentrevista());
 		ps.setString(8,c.getData());
+		ps.setString(9,c.getSalario());
+		ps.setString(10,c.getBeneficios());
 
 
 		
@@ -60,10 +63,11 @@ public class MensagemDAO extends GenericDAO{
 		if(rs != null) {
 			while(rs.next()) {
 				
-				Resposta resposta= new Resposta(rs.getInt("idResposta"), rs.getString("description"));
+				
 				
 				Mensagem c = new Mensagem(rs.getInt("id"),rs.getString("nomeempresa"), rs.getString("email"), rs.getString("msg")
-						,resposta,rs.getString("endereco"),rs.getString("vaga"),rs.getString("horaentrevista"),rs.getString("data"));
+						,rs.getString("idresposta"),rs.getString("endereco"),rs.getString("vaga"),rs.getString("horaentrevista"),rs.getString("data"),
+						rs.getString("salario"),rs.getString("beneficios"));
 				lista.add(c);
 			}
 		}
@@ -95,12 +99,14 @@ public class MensagemDAO extends GenericDAO{
 		ps.setString(1, c.getNomeempresa());
 		ps.setString(2, c.getEmail());
 		ps.setString(3,c.getMsg());
-		ps.setInt(4, c.getResposta().getId());
+		ps.setString(4, c.getResposta());
 		ps.setString(5,c.getEndereco());
 		ps.setString(6,c.getVaga());
 		ps.setString(7,c.getHoraentrevista());
 		ps.setString(8,c.getData());
-		ps.setInt(9, c.getId());
+		ps.setString(9,c.getSalario());
+		ps.setString(10,c.getBeneficios());
+		ps.setInt(11, c.getId());
 		
 		
 		ps.execute();

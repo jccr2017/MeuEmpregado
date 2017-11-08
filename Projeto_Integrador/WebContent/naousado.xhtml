@@ -44,14 +44,14 @@
 			
 							<div class="form-group">
 					<h:outputLabel value="Nome Empresa:"/>
-					<h:inputText disabled="true" styleClass="form-control" value="#{mensagemManagedBean.mensagem.nomeempresa}" />
+					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.nomeempresa}"/>
 				</div>
 				
 				
 				
 			<div class="form-group">
 					<h:outputLabel value="Email:"/>
-					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.email}" disabled="true"/>
+					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.email}"/>
 					
 				</div>
 				
@@ -61,7 +61,7 @@
 				
 				<div class="form-group">
 					<h:outputLabel value="Endereço:"/>
-					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.endereco}" disabled="true"/>
+					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.endereco}"/>
 					
 				</div>
 				
@@ -69,52 +69,39 @@
 				
 					<div class="form-group">
 					<h:outputLabel value="Vaga:"/>
-					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.vaga}" disabled="true"/>
-					
-				</div>
-				
-				
-									<div class="form-group">
-					<h:outputLabel value="Salario:"/>
-					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.salario}" disabled="true"/>
-					
-				</div>
-				
-						<div class="form-group">
-					<h:outputLabel value="Beneficios:"/>
-					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.beneficios}" disabled="true"/>
+					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.vaga}"/>
 					
 				</div>
 				
 											<div class="form-group">
-					<h:outputLabel value="Data de inicio do trabalho:"/>
-					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.data}" disabled="true"/>
+					<h:outputLabel value="Data Entrevista:"/>
+					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.data}"/>
 					
 				</div>
 				
 				
 						<div class="form-group">
-					<h:outputLabel value="Hora de inicio do trabalho:"/>
-					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.horaentrevista}" disabled="true"/>
+					<h:outputLabel value="Hora Entrevista:"/>
+					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.horaentrevista}"/>
 					
 				</div>
 				
 				
 								<div class="form-group">
 					<h:outputLabel value="Mensagem:"/>
-					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.msg}" disabled="true"/>
-					
-				</div>
-				
-					<div class="form-group">
-				
-					<h:outputLabel value="Resposta do candidato:"/>
-					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.resposta}" />
+					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.msg}"/>
 					
 				</div>
 
 
 
+
+	       			<div class="form-group">
+				<h:outputLabel value="Resposta:"/>
+				<h:selectOneMenu id="respostas" value="#{mensagemManagedBean.mensagem.resposta.id}" styleClass="form-control" >
+					<f:selectItems value="#{respostaManagedBean.listResposta}" var="resposta" itemValue="#{resposta.id}" itemLabel="#{resposta.description}"/>
+				</h:selectOneMenu>
+			</div>
 				
 
 				
@@ -123,9 +110,7 @@
 			<div id="actions" class="row">
 				<div class="col-md-12">
 			
-			<h:commandLink styleClass="btn btn-primary" value="Salvar Resposta" action="#{mensagemManagedBean.updateMensagemAction}"/>	
-				
-			<h:commandLink styleClass="btn btn-primary" value="Deletar" action="#{mensagemManagedBean.deleteMensagemAction}"/>		
+			<!-- <h:commandLink styleClass="btn btn-primary" value="Salvar" action="#{mensagemManagedBean.updateMensagemAction}"/> -->	
 				
             <h:commandLink value="Voltar" styleClass="btn btn-primary"  action="listamensagemEMPREGADO?faces-redirect=true"/>
             

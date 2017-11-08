@@ -6,23 +6,22 @@ public class Mensagem {
 	private String nomeempresa;
 	private String email;
 	private String msg;
-	private Resposta resposta;
+	private String resposta;
 	private String endereco;
 	private String vaga;
 	private String horaentrevista;
 	private String data;
-	
-	
-	
+	private String salario;
+	private String beneficios;
 	
 	
 	public Mensagem(){
 		
 	}
 	
-
-	public Mensagem(int id, String nomeempresa, String email, String msg, Resposta resposta, String endereco,
-			String vaga, String horaentrevista,String data) {
+	
+	public Mensagem(int id, String nomeempresa, String email, String msg, String resposta, String endereco, String vaga,
+			String horaentrevista, String data, String salario, String beneficios) {
 		super();
 		this.id = id;
 		this.nomeempresa = nomeempresa;
@@ -32,9 +31,10 @@ public class Mensagem {
 		this.endereco = endereco;
 		this.vaga = vaga;
 		this.horaentrevista = horaentrevista;
-		this.data=data;
+		this.data = data;
+		this.salario = salario;
+		this.beneficios = beneficios;
 	}
-	
 	public int getId() {
 		return id;
 	}
@@ -59,10 +59,10 @@ public class Mensagem {
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
-	public Resposta getResposta() {
+	public String getResposta() {
 		return resposta;
 	}
-	public void setResposta(Resposta resposta) {
+	public void setResposta(String resposta) {
 		this.resposta = resposta;
 	}
 	public String getEndereco() {
@@ -83,18 +83,29 @@ public class Mensagem {
 	public void setHoraentrevista(String horaentrevista) {
 		this.horaentrevista = horaentrevista;
 	}
-	
 	public String getData() {
 		return data;
 	}
 	public void setData(String data) {
 		this.data = data;
 	}
+	public String getSalario() {
+		return salario;
+	}
+	public void setSalario(String salario) {
+		this.salario = salario;
+	}
+	public String getBeneficios() {
+		return beneficios;
+	}
+	public void setBeneficios(String beneficios) {
+		this.beneficios = beneficios;
+	}
 	
 	
 	
 	
 
-	
+
 
 }

@@ -65,15 +65,29 @@
 					
 				</div>
 				
+						
+				
+						<div class="form-group">
+					<h:outputLabel value="Salario:"/>
+					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.salario}" />
+					
+				</div>
+				
+						<div class="form-group">
+					<h:outputLabel value="Beneficios:"/>
+					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.beneficios}" />
+					
+				</div>
+				
 											<div class="form-group">
-					<h:outputLabel value="Data Entrevista:"/>
+					<h:outputLabel value="Data de inicio do trabalho:"/>
 					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.data}"/>
 					
 				</div>
 				
 				
 						<div class="form-group">
-					<h:outputLabel value="Hora Entrevista:"/>
+					<h:outputLabel value="Hora de inicio do trabalho:"/>
 					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.horaentrevista}"/>
 					
 				</div>
@@ -82,20 +96,12 @@
 								<div class="form-group">
 					<h:outputLabel value="Mensagem:"/>
 					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.msg}"/>
-					
-				</div>
-
-
-
-
-	       			<div class="form-group">
-				<h:outputLabel value="Resposta:"/>
-				<h:selectOneMenu id="respostas" value="#{mensagemManagedBean.mensagem.resposta.id}" styleClass="form-control">
-					<f:selectItems value="#{respostaManagedBean.listResposta}" var="resposta" itemValue="#{resposta.id}" itemLabel="#{resposta.description}"/>
-				</h:selectOneMenu>
-			</div>
-				
+					</div>
 		
+
+	
+		
+			
 
 				<div id="actions" class="row">
 					<div class="col-md-12">

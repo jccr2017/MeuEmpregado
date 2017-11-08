@@ -4,6 +4,8 @@ public class Resposta {
 	
 	private Integer id;
 	private String description;
+
+	
 	
 	public Resposta(){
 	
@@ -34,6 +36,10 @@ public class Resposta {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+
+	
+	//////////////////////////////////////
 	
 	
 

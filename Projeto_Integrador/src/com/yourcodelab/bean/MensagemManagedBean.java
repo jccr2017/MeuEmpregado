@@ -4,6 +4,7 @@ import java.io.IOException;
 
 
 
+
 import java.sql.SQLException;
 import java.util.List;
 
@@ -11,7 +12,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import com.yourcodelab.model.Mensagem;
-import com.yourcodelab.model.Resposta;
+
 import com.yourcodelab.service.MensagemService;
 
 @ManagedBean(name="mensagemManagedBean")
@@ -23,7 +24,7 @@ public class MensagemManagedBean {
 	private Mensagem Mensagem;
 	private List<Mensagem> listMensagem;
 	private MensagemService service;
-	private Resposta resposta;
+
 	
 	
 	
@@ -33,9 +34,7 @@ public class MensagemManagedBean {
 		
 		service = new MensagemService();
 		
-		resposta = new Resposta(0, "");
-		
-		Mensagem = new Mensagem(0,"", "", "",resposta,"","","","");
+		Mensagem = new Mensagem(0,"", "", "","","","","","","","");
 		
 		listMensagem = service.listAll();
 		
@@ -48,7 +47,11 @@ public class MensagemManagedBean {
 		System.out.println("Saving...");
 		service.insertMensagem(Mensagem);
 		
+		Mensagem = new Mensagem(0,"", "", "","","","","","","","");
+		
 		this.listMensagem = service.listAll();
+		
+		
 		
 		return "indexEMPREGADOR";
 	}
@@ -87,7 +90,25 @@ public class MensagemManagedBean {
 		
 	}
 
-	////////////////////////////////////////
+	////////////////////////////////////////limpar campos
+	
+	public String limpar() throws SQLException, ClassNotFoundException, IOException {
+		System.out.println("limpando campos...");
+	
+		Mensagem = new Mensagem(0,"", "", "","","","","","","","");
+		
+		return "novaMensagemEMPREGADO";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public Mensagem getMensagem() {
 		return Mensagem;
 	}
@@ -110,12 +131,6 @@ public class MensagemManagedBean {
 	
 	///////////////////////////////////////////
 	
-	public Resposta getResposta() {
-		return resposta;
-	}
 
-	public void setResposta(Resposta Resposta) {
-		this.resposta = Resposta;
-	}
 
 }
