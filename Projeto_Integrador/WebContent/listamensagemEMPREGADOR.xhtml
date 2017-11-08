@@ -78,12 +78,7 @@
 					</h:column>
 					
 					
-								<h:column>
-						<f:facet name="header">
-							<h:outputLabel value="Hora de inicio do trabalho"/>
-						</f:facet>
-				    	<h:outputText value="#{c.horaentrevista}"/>
-					</h:column>
+	
 					
 					
 					<!-- 
@@ -109,7 +104,7 @@
 					
 			
 					<h:column>
-						<h:commandLink styleClass="btn btn-sm btn-success" value="Visualizar Perfil" action="MsgEMPREGADOR?faces-redirect=true">
+						<h:commandLink styleClass="btn btn-sm btn-success" value="Visualizar " action="MsgEMPREGADOR?faces-redirect=true">
 							<f:setPropertyActionListener target="#{mensagemManagedBean.mensagem}" value="#{c}" />
 						</h:commandLink>
 

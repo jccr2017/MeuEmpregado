@@ -92,19 +92,9 @@
 				</div>
 				
 				
-						<div class="form-group">
-					<h:outputLabel value="Hora de inicio do trabalho:"/>
-					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.horaentrevista}" disabled="true"/>
-					
-				</div>
-				
-				
-								<div class="form-group">
-					<h:outputLabel value="Mensagem:"/>
-					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.msg}" disabled="true"/>
-					
-				</div>
-				
+		
+				<hr />
+				<hr />
 				
 				
 				<div class="form-group">
@@ -114,6 +104,18 @@
 					
 				</div>
 				
+		
+												<div class="form-group">
+					<h:outputLabel value="Nome do candidato:"/>
+					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.horaentrevista}" disabled="true"/>
+					
+				</div>
+				
+				
+								<div class="form-group">
+					<h:outputLabel value="Cpf do candidato:"/>
+					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.msg}" disabled="true"/>
+					</div>
 
 
 
@@ -129,7 +131,7 @@
 				
             <h:commandLink value="Voltar" styleClass="btn btn-primary"  action="listamensagemEMPREGADOR?faces-redirect=true"/>
             
-			      
+			 <h:commandLink styleClass="btn btn-primary" value="Deletar" action="#{mensagemManagedBean.deleteMensagemAction}"/>	
 			   
 			    </div>
 			</div>
