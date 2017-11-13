@@ -94,6 +94,7 @@
 				
 		
 				<hr />
+				<h:outputLabel value="Candidato"/>
 				<hr />
 				
 				
@@ -116,7 +117,7 @@
 					<h:outputLabel value="Cpf do candidato:"/>
 					<h:inputText styleClass="form-control" value="#{mensagemManagedBean.mensagem.msg}" disabled="true"/>
 					</div>
-
+			
 
 
 	 
@@ -132,6 +133,8 @@
             <h:commandLink value="Voltar" styleClass="btn btn-primary"  action="listamensagemEMPREGADOR?faces-redirect=true"/>
             
 			 <h:commandLink styleClass="btn btn-primary" value="Deletar" action="#{mensagemManagedBean.deleteMensagemAction}"/>	
+			   
+			   <h:commandLink value="Demitir" styleClass="btn btn-primary"  action="#"/>
 			   
 			    </div>
 			</div>

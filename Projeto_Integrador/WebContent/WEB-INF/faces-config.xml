@@ -47,10 +47,20 @@
 
 
 	<navigation-rule>
-		<from-view-id>showMsgEMPREGADO</from-view-id>
+		<from-view-id>showMsgEMPREGADO.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>listamensagemEMPREGADO</from-outcome>
-			<to-view-id>listamensagemEMPREGADO.xhtml</to-view-id>
+			<from-outcome>Inicial</from-outcome>
+			<to-view-id>Inicial.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	
+		<navigation-rule>
+		<from-view-id>MsgEMPREGADOR.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>Inicial</from-outcome>
+			<to-view-id>Inicial.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
@@ -64,6 +74,8 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
+	
+	
 
 
 

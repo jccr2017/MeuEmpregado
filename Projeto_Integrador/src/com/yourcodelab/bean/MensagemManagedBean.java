@@ -66,7 +66,7 @@ public class MensagemManagedBean {
 		
 		listMensagem = service.listAll();
 		
-		return "indexEMPREGADOR";
+		return "Inicial";
 	}
 	
 	
