@@ -16,7 +16,10 @@ import com.yourcodelab.service.EmpregadoService;
 @ManagedBean(name="empregadoManagedBean")
 @SessionScoped
 
+
 public class EmpregadoManagedBean {
+	
+	//Teste
 	
 	private Empregado empregado;
 	private List<Empregado> listEmpregado;
