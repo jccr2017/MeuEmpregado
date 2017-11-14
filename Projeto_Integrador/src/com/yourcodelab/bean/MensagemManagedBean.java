@@ -100,15 +100,7 @@ public class MensagemManagedBean {
 		return "novaMensagemEMPREGADO";
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	public Mensagem getMensagem() {
 		return Mensagem;
 	}
@@ -130,7 +122,5 @@ public class MensagemManagedBean {
 	}
 	
 	///////////////////////////////////////////
-	
-
 
 }

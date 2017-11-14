@@ -14,6 +14,8 @@ public class Mensagem {
 	private String salario;
 	private String beneficios;
 	
+
+	
 	
 	public Mensagem(){
 		
